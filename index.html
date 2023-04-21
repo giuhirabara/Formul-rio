@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lcq3hnb.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cadastro</h1>
+        </header>
+        <form>
+            <input type="text" name="nome" required placeholder="Nome completo..."/>
+            <input type="email" name="email" required placeholder="ex: example@mail.com"/>
+            <input type="tel" id="telefone" name="telefone" required />
+            <input type="tel" id="cpf" name="cpf" required/>
+            <input type="text" name="endereco" required placeholder="ex: Rua Tal, Bairro Tal, Número 123."/>
+            <input type="tel" id="cep" name="cep" required />
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/messages_pt_BR.min.js"></script>
+    <script>
+       $(document).ready(function() {
+        $('#telefone').mask('(00) 00000-0000', {
+            placeholder: '(__) _____-____'
+        });
+        $('#cpf').mask('000.000.000-00', {
+            placeholder: '___.___.___-__'
+        });
+        $('#cep').mask('00000-000', {
+            placeholder: '_____-___'
+        });
+
+        $('form').validate({
+            rules: {
+                nome: {
+                    required: true
+                },
+                email: {
+                    required: true
+                },
+                telefone: {
+                    required: true
+                },
+                cpf: {
+                    required: true
+                },
+                endereco: {
+                    required: true
+                },
+                cep: {
+                    required: true
+                }
+            },
+            messages: {
+                nome: 'Por favor, insira seu nome',
+                email: 'Por favor, insira seu email',
+                telefone: 'Por favor, insira seu telefone',
+                cpf: 'Por favor, insira seu CPF',
+                endereco: 'Por favor, insira seu endereço',
+                cep: 'Por favor, insira seu CEP'
+            }
+        })
+       })
+    
+    </script>
+</body>
+</html>
